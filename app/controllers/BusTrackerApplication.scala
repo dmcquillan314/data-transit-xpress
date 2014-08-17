@@ -1,11 +1,10 @@
 package controllers
 
-import play.api.Play
-import play.api.libs.json.Json
+import play.api.libs.iteratee.Enumerator
+import play.api.{Logger, Play}
 import play.api.libs.ws.{Response, WS}
 import play.api.libs.ws.WS.WSRequestHolder
-import play.api.mvc.Controller
-import play.api.mvc.Action
+import play.api.mvc.{ResponseHeader, SimpleResult, Controller, Action}
 import net.liftweb.json.Xml.{toJson}
 
 import scala.concurrent.{ExecutionContext, Future}
@@ -39,7 +38,10 @@ object BusTrackerApplication extends Controller {
                 net.liftweb.json.render(json)
             )
 
-            Ok(transformedResponse)
+            SimpleResult(
+                header = ResponseHeader(response.status, Map(CONTENT_TYPE -> "application/json")),
+                body = Enumerator(transformedResponse.getBytes())
+            )
         }
     }
 
