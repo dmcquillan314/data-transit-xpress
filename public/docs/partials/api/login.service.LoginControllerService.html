@@ -1,0 +1,74 @@
+<h1><code ng:non-bindable="">LoginControllerService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">login</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="login-service-page login-service-logincontrollerservice-page"><p>This service contains functions to handle various error/success cases for guest and full user login</p>
+</div></div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_handleguesterror">handleGuestError(guestUser,guestUserForm,response)</h3>
+<div class="handleguesterror"><div class="login-service-page login-service-logincontrollerservice-page"><h5 id="properties_handleguesterror_description">Description:</h5>
+
+<p>this method reads the response from the Peapod rest api and then sends the guest user to the correct error result page within the guest login sequence.</p>
+
+<p><h5 id="properties_handleguesterror_parameters">Parameters:</h5></p>
+<ul>
+    <li><b>guestUser</b> - guestUser model object</li>
+    <li><b>guestUserForm</b> - guestUserForm form object with validation messaging</li>
+    <li><b>response</b> - response from guest login api service</li>
+</ul></div></div>
+</li>
+<li><h3 id="properties_handleguestsuccess">handleGuestSuccess(response)</h3>
+<div class="handleguestsuccess"><div class="login-service-page login-service-logincontrollerservice-page"><h5 id="properties_handleguestsuccess_description">Description:</h5>
+
+<p>this method reads the response from the Peapod rest api and then sends the guest user to the authenticated user home page ( index.jhtml#/home ). This method also handles the case where a user that we don&#39;t service submits their email to our rest api successfully.</p>
+
+<p><h5 id="properties_handleguestsuccess_parameters">Parameters:</h5></p>
+<ul>
+    <li><b>response</b> - response from guest login api service</li>
+</ul></div></div>
+</li>
+<li><h3 id="properties_handleusererror">handleUserError(user,userForm,response)</h3>
+<div class="handleusererror"><div class="login-service-page login-service-logincontrollerservice-page"><h5 id="properties_handleusererror_description">Description:</h5>
+
+<p> this method handles all error cases from the login apis. It will result an object representing the error message to be displayed to the user</p>
+
+<p><h5 id="properties_handleusererror_parameters">Parameters:</h5></p>
+<ul>
+    <li><b>user</b> - user model object</li>
+    <li><b>userForm</b> - userform form object with validation messaging</li>
+    <li><b>response</b> - response from guest login api service</li>
+</ul></div></div>
+</li>
+<li><h3 id="properties_handleusersuccess">handleUserSuccess(user,response)</h3>
+<div class="handleusersuccess"><div class="login-service-page login-service-logincontrollerservice-page"><h5 id="properties_handleusersuccess_description">Description:</h5>
+
+<p>this method checks the result code from the Peapod rest api to check if they logged in successfully and then forwards them to the authenticated user home page ( index.jhtml#/home ).</p>
+
+<p><h5 id="properties_handleusersuccess_parameters">Parameters:</h5></p>
+<ul>
+    <li><b>user</b> - user model object</li>
+    <li><b>response</b> - response from user login api service</li>
+</ul></div></div>
+</li>
+<li><h3 id="properties_injectguesterrorpropstoscope">injectGuestErrorPropsToScope($scope)</h3>
+<div class="injectguesterrorpropstoscope"><div class="login-service-page login-service-logincontrollerservice-page"><h5 id="properties_injectguesterrorpropstoscope_description">Description:</h5>
+
+<p>this method given the current $scope object from the LoginController will add the cities object using the SharedProperties service with the key guestCities to be used with the select list of the ambiguous city selector</p>
+
+<p><h5 id="properties_injectguesterrorpropstoscope_parameters">Parameters:</h5></p>
+<ul>
+    <li><b>guestUser</b> - guestUser model object</li>
+    <li><b>guestUserForm</b> - guestUserForm form object with validation messaging</li>
+    <li><b>response</b> - response from guest login api service</li>
+</ul></div></div>
+</li>
+<li><h3 id="properties_clearguestprops">clearGuestProps()</h3>
+<div class="clearguestprops"><div class="login-service-page login-service-logincontrollerservice-page"><h5 id="properties_clearguestprops_description">Description:</h5>
+
+<p>this method clears the values for guestCities and guestUser in the SharedProperties service. This method is called on destroy of the LoginController</p></div></div>
+</li>
+</ul>
+</div>
+</div>

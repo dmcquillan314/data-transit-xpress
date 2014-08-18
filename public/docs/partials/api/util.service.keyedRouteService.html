@@ -1,0 +1,29 @@
+<h1><code ng:non-bindable="">keyedRouteService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">util</code>
+</span>
+</div>
+</h1>
+<div><div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_getkeyedarray">getKeyedArray(params)</h3>
+<div class="getkeyedarray"><div class="util-service-page util-service-keyedrouteservice-page"><h5 id="properties_getkeyedarray_description">Description:</h5>
+
+<p>Will take a string in the form of a url and produce a map of arrays.</p>
+<p><h5 id="properties_getkeyedarray_parameters">Parameters:</h5></p>
+<ul>
+    <li><b>params</b> - a url string</li>
+</ul>
+
+<p><h5 id="properties_getkeyedarray_example">Example:</h5>
+<pre class="prettyprint linenums">
+    keyedRouteService.getKeyedArray( '/categories/0/categories/1/categories/2/products/1' );
+
+    {
+        'categories': [ 0,1,2 ],
+        'products': [1]
+    }
+</pre>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

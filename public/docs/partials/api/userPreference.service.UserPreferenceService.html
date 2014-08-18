@@ -1,0 +1,32 @@
+<h1><code ng:non-bindable="">UserPreferenceService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">userPreference</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="userpreference-service-page userpreference-service-userpreferenceservice-page"><p>This service contains common CRUD operations for user preferences using <a href="#/api/userPreference.service:UserPreferenceFactory">userPreference.service:UserPreferenceFactory</a></p>
+</div></div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_updatepreference">updatePreference(preferenceName,newValue)</h3>
+<div class="updatepreference"><div class="userpreference-service-page userpreference-service-userpreferenceservice-page"><p>promise chain to update and get the new value for a given preference</p>
+</div></div>
+</li>
+<li><h3 id="properties_saveresponsedatatocache">saveResponseDataToCache(responseData)</h3>
+<div class="saveresponsedatatocache"><div class="userpreference-service-page userpreference-service-userpreferenceservice-page"><p>given a response data from the user preference api it will retrieve the preference value and save it to the stored cache</p>
+</div></div>
+</li>
+<li><h3 id="properties_getpreference">getPreference(preferenceName)</h3>
+<div class="getpreference"><div class="userpreference-service-page userpreference-service-userpreferenceservice-page"><p>given a preference name it will retrieve the stored cache if it exists in the cache, else it will retrieve an empty hash</p>
+</div></div>
+</li>
+<li><h3 id="properties_haspreference">hasPreference(preferenceName)</h3>
+<div class="haspreference"><div class="userpreference-service-page userpreference-service-userpreferenceservice-page"><p>given a preference name it will check if the key exists in the cache.</p>
+</div></div>
+</li>
+<li><h3 id="properties_populatecache">populateCache()</h3>
+<div class="populatecache"><div class="userpreference-service-page userpreference-service-userpreferenceservice-page"><p>will populate a cache from the ReST apis given the hash of preference names in <a href="#/api/userPreference.object:UserPreferenceKeys">userPreference.object:UserPreferenceKeys</a></p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,16 @@
+<h1><code ng:non-bindable="">SessionHttpInterceptor</code>
+<div><span class="hint">service in module <code ng:non-bindable="">httpInterceptor</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="httpinterceptor-factory-page httpinterceptor-factory-sessionhttpinterceptor-page"><p>This interceptor will check the response code of a failed $http promise
+and check if it has a response code of either 401 or 403.  If it does it should
+retry the promise once.  This is used so that if a user&#39;s cookie expires it will cause
+the 401/403, however on the failed request the cookie will be recreated.</p>
+<p>Therefore, it is safe to then just rerun the request since the cookie will be there for
+any subsequent requests.  However, if the cookie is not created for once reason or another
+then it should not rerun the request more than once.  This is configurable via the maxInterceptions
+variable.</p>
+</div></div>
+</div>

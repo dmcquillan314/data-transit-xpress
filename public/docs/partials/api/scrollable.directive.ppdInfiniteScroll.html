@@ -1,0 +1,19 @@
+<h1><code ng:non-bindable="">ppdInfiniteScroll</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">scrollable</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="scrollable-directive-page scrollable-directive-ppdinfinitescroll-page"><p>This directives creates a place to put a listener of the current scroll position.  When the threshold is exceeded it will
+trigger the callback expression in the ppdInfiniteScroll param.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY ppd-infinite-scroll
+     [threshold="{number}"]
+     [ppd-infinite-scroll]="{function|expression}"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>threshold <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="scrollable-directive-page scrollable-directive-ppdinfinitescroll-page"><p>Sets the scroll threshold from the bottom of the scroll pane from which to call the update handler</p>
+</div> <p><em>(default: 0)</em></p></td></tr><tr><td>[ppdInfiniteScroll]</td><td><a href="" class="label type-hint type-hint-function">function</a><a href="" class="label type-hint type-hint-expression">expression</a></td><td><div class="scrollable-directive-page scrollable-directive-ppdinfinitescroll-page"><p>sets a callback expression to be ran when the threshold has been exceeded</p>
+</div></td></tr></tbody></table></div>
+</div>

@@ -1,0 +1,217 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="productview-page"><p>The dependencies for this module are &#39;ProductViewServices&#39;, &#39;ProductViewProviders&#39;, &#39;ngRoute&#39;, &#39;ProductListDirectives&#39;.</p>
+<p> These dependencies are just used to collect all the product view related factories for the various route configs using this
+ module.</p>
+ <h3 id="config">Config</h3>
+
+<p> The base config block for any features implemented using this module should be the following:</p>
+<pre class="prettyprint linenums">
+ $routeProvider
+ .when( '/url', {
+            reloadOnSearch: false,
+
+            controller: 'ProductViewController',
+
+            templateUrl: 'pages/product-view/product_view.html'
+        })
+</pre>
+<p> An example of a route configuration is below which is the configuration for product lists:</p>
+<p> /personal-lists/:listId -&gt; { resolve: { data: productListsProvider.resolveData } }</p>
+<p> The resolve block should strictly be used to provide the service that will resolve the data parameter.</p>
+<h3 id="available-options-for-provider">Available options for provider</h3>
+ <pre class="prettyprint linenums">
+
+ data = {
+        config: {  // used to specify custom options for this provider
+            isFullWidth: [true|false], // used to hide the sidebar if there are no product groups [optional]
+            sidebarTemplate: {  // used to override the inner sidebar template in the product view
+                mobile: '',
+                tablet: '',
+                desktop: ''
+            },
+            viewTemplate: { // used to override the inner main view template in the product view
+                mobile: '',
+                tablet: '',
+                desktop: ''
+            },
+            headerText: { // used to set the text in the subheader of the product view
+                mobile: '' // text for mobile,
+                tablet: '' // text for tablet,
+                desktop: '' // text for desktop
+            },
+            sortTypes: [
+                    name: 'Alphabetical Ascending', // display name
+                    value: 'name asc' // value for option
+                ] // if the default sort types should be overridden it should be placed here in the specified format
+
+        },
+        productData: { // contains data relevant to the products and product groups
+            productGroups: [] // contains product groups (e.g. list from product lists),
+            pagination: {} // pagination object from response [optional],
+            facets: {} // available facets for refinement of search results using refine button,
+            products: [] // products array,
+            selectedProductGroup: {} // should be an object representing the currently selected product group,
+            isProductGroupSelect: [true|false] // used with the selected product group although is mainly for switching between the list of product groups and the list of products in mobile
+            productGroupId: '' // used to extract the product group id from the product group,
+            productGroupNameKey: '' // used to extract the product group name from the product group
+        },
+        functions: { A set of template methods to handle async flows in the product view ( these should all return promises )
+            updateResults: function(options) {
+                        // code to return promise
+                   },
+            selectGroupPromise: function( productGroup ) {
+                // code to select a product group and return a promise or redirect to page using $location provider
+            }
+        }
+    }
+ </pre>
+
+ <h3 id="function-descriptions">Function descriptions</h3>
+
+ <h4 id="function-descriptions_update-results">Update Results</h4>
+
+<p> Delegate method used to update the results of the current result set.</p>
+<p> This method should call the original method that was used to get the promise on the initial page request but should be passed a set of options.  An example implementation of this method is provided from product search below:</p>
+<p> <pre class="prettyprint linenums">
+ updateResults: function(options) {
+        return getProductSearchPromise(options);
+    }
+ </pre>
+<p> The options will be specific to each provider but should be similar to the following:</p>
+<p> <pre class="prettyprint linenums">
+ var options = {
+        sort: '' // string text representing the sort type
+        filter: [] // array of filters in the following format [ 'filterName', [1,2,3,4] ],
+        start: [num] // used to specify the start index for the result set,
+        rows: [num] // used to specify the number of rows from the start to return,
+    }
+ </pre>
+ <h4 id="function-descriptions_select-group-promise">Select Group Promise</h4>
+
+<p> Delegate method used to select a group when a product group is clicked on in the page</p>
+<p> This method will usually just make a location change as in the following example from product lists:</p>
+<p> <pre class="prettyprint linenums">
+ selectGroupPromise: function( list ) {
+        var listId = list.listId;
+        $location.path( 'personal-list/' + listId );
+    }
+ </pre>
+</div><h2 id="example">Example</h2>
+<div class="example"><div class="productview-page"><p>.provider(&#39;productList&#39;, function() {</p>
+<pre><code>this.$get = [ function() {} ];
+
+var fetchlistIdFromRoute = function($route) {
+    var listId = angular.isDefined($route.current.params.listId) === false ? 0 : $route.current.params.listId;
+    return listId;
+};
+
+
+this.resolveData = [ &#39;$q&#39;, &#39;$log&#39;, &#39;$route&#39;, &#39;ProductListFactory&#39;, &quot;$location&quot;, function( $q, $log, $route, ProductListFactory, $location ) {
+
+    var listId = fetchlistIdFromRoute( $route );
+
+    var data = {
+        config: {
+            showEditButton: true,
+            sidebarTemplate: {
+                mobile:  &#39;site/partials/mobile/pages/product-view/product-list/product_view_sidebar.html&#39;,
+                tablet: &#39;site/partials/tablet/pages/product-view/product-list/product_view_sidebar.html&#39;,
+                desktop: &#39;&#39;
+            },
+            viewTemplate: {
+                mobile:  &#39;site/partials/mobile/pages/product-view/product-list/product_view_main.html&#39;,
+                tablet: &#39;site/partials/tablet/pages/product-view/product-list/product_view_main.html&#39;,
+                desktop: &#39;&#39;
+            }
+        },
+        productData: {
+        },
+        functions: {
+            selectGroupPromise: function( list ) {
+                var listId = list.listId;
+                $location.path( &#39;personal-list/&#39; + listId );
+            },
+            updateResults: function( options ) {
+                return getProductListPromise( options );
+            }
+        }
+    };
+
+    var getProductListPromise = function( options ) {
+        var deferred = $q.defer();
+        var promise = deferred.promise;
+
+
+        var listIdWasZero = false;
+        var $promise = ProductListFactory.readLists().$promise;
+        $promise
+            .then( function( response ) {
+
+                data.productData.productGroups = response.response.lists;
+
+                if( listId === 0 ) {
+                    listId = response.response.lists[0].listId;
+                    listIdWasZero = true;
+                }
+
+                var sortType = options.sortType || &#39;&#39;,</code></pre>
+<p>//                        filters = options.filter || [],
+                        rows = options.rows || 20,
+                        start = options.start || 0;</p>
+<pre><code>                var payload = {
+                    sort: sortType,</code></pre>
+<p>//                        filter: filters,
+                        start: start,
+                        rows: rows,
+                        listId: listId
+                    };</p>
+<pre><code>                return ProductListFactory.readListById(payload).$promise;
+            })
+            .then( function( response ) {
+
+                var appendProducts = options.appendProducts || false;
+
+                // Set product objects
+                if( appendProducts ) {
+                    var newProducts = response.response.products;
+
+                    for( var i = 0; i &lt; newProducts.length; i++ ) {
+                        data.productData.products.push(newProducts[i]);
+                    }
+
+                } else {
+                    data.productData.products = response.response.products;
+                }
+
+                data.productData.selectedProductGroup = response.response.list;
+                data.productData.isProductGroupSelected = listIdWasZero === false;
+                data.productData.productGroupId = &quot;listId&quot;;
+                data.productData.productGroupNameKey = &quot;listName&quot;;
+                data.productData.pagination = response.response.pagination;</code></pre>
+<p>//                data.productData.facets = response.response.facets;</p>
+<pre><code>                // Set header text
+                data.config.headerText = {
+                    mobile: listIdWasZero ? &#39;My Lists&#39; : response.response.list.listName,
+                    tablet: &quot;My Lists&quot;,
+                    desktop: &quot;My Lists&quot;
+                };
+
+                deferred.resolve(data);
+            })
+            .catch( function( error ) {
+                deferred.reject(&quot;Error in keyword product search &quot; + error);
+                $location.path( &#39;personal-list&#39; );
+            });
+
+        return promise;
+    };
+
+    return getProductListPromise( listId );
+
+}];</code></pre>
+<p>});</p>
+</div></div>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="ziptripApp">
+    <head>
+        <!-- Mobile viewport optimizations -->
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+
+        <script src="https://maps.googleapis.com/maps/api/js?client=gme-peapodllc&amp;sensor=false"></script>
+
+        <script>
+            WebFontConfig = {
+                custom: {
+                    families: ['ProximaNovaSoft', 'ProximaNova', 'ElegantIcons'],
+                    urls: ['/shop/site/fonts/fonts.css']
+                }
+            };
+        </script>
+        <script src="/src/main/js/lib/webfontloader.1.5.3.min.js"></script>
+        <link type="text/css" href="/dist/css/app.css" rel="stylesheet" />
+        <script type="text/javascript" src="/dist/js/ziptrip.js"></script>
+    </head>
+    <body watch-width ng-controller="RootController" ng-class="{ back: isBack, forward: isForward, withSubheader: subHeader != '', animateView: animateView, authValidating: authValidating }">
+            {{ test }}
+        <div class="wrapper">
+            <div ng-view class="main">
+            </div>
+        </div>
+
+    </body>
+</html>

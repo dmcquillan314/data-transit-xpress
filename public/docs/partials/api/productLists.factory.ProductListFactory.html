@@ -1,0 +1,105 @@
+<h1><code ng:non-bindable="">ProductListFactory</code>
+<div><span class="hint">service in module <code ng:non-bindable="">productLists</code>
+</span>
+</div>
+</h1>
+<div><h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$http">$http</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$resource">$resource</a></code>
+</li>
+</ul>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_$resource">$resource</h3>
+<div class="$resource"><div class="productlists-factory-page productlists-factory-productlistfactory-page"><p>This factory returns the following resource:
+<pre class="prettyprint linenums">
+$resource('/api/v2.0/user/lists/:listId',
+{},
+{
+
+    // POST - list create/product addition to list
+    'addProduct': {
+        method: 'POST',
+        isArray: false,
+        params: {
+            listId: '@listId',
+            productId: '@productId'
+        }
+    },
+    'createList': {
+       method: 'POST',
+       isArray: false,
+       params: {
+           listName: '@listName'
+        }
+    },
+
+    // GET - list of user lists/list details
+    'readLists': {
+                   method: 'GET',
+                   isArray: false,
+                   params: {}
+               },
+    'readListsWithProductId': {
+               method: 'GET',
+               isArray: false,
+               params: {
+                   productId: '@productId'
+               }
+    },
+    'readListById': {
+               method: 'GET',
+               isArray: false,
+               params: {
+                   listId: '@listId',
+                    sort: '@sort',
+                    flags: true,
+                    extendedInfo: true,
+                    rows: '@rows',
+                    start: '@start'
+                }
+    },
+
+    // PUT - list renaming
+    'renameList': {
+               method: 'PUT',
+               isArray: false,
+               params: {
+                   newName: '@listName',
+                    listId: '@listId'
+                }
+    },
+
+    // DELETE - list deletion/clear/product removal
+    'removeProduct': {
+               method: 'DELETE',
+               isArray: false,
+               params: {
+                   listId: '@listId',
+                    productId: '@productId'
+                }
+    },
+    'clearList': {
+               method: 'DELETE',
+               isArray: false,
+               params: {
+                   listId: '@listId',
+                    clear: true
+                }
+    },
+    'deleteList': {
+               method: 'DELETE',
+               isArray: false,
+               params: {
+                   listId: '@listId'
+                }
+    }
+});
+</pre>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,41 @@
+<h1><code ng:non-bindable="">ppdProductListProductManagement</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">productLists</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="productlists-directive-page productlists-directive-ppdproductlistproductmanagement-page"><p>will inject the <a href="#/api/productLists.controller:ProductListProductManagementController">ProductListProductManagementController</a> into the this location
+to provide necessary functionality to manage a set of products in a product lists.  This directive is adaptive based on the value
+of retrieve lists and will use the following parameters in each case</p>
+<h4 id="description_retrieve-lists-==-true">retrieve-lists == true</h4>
+
+<ul>
+   <li>productId</li>
+   <li>productCollection</li>
+</ul>
+
+<h4 id="description_retrieve-lists-=-true">retrieve-lists != true</h4>
+
+<ul>
+   <li>currentList</li>
+</ul></div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;ppd-product-list-product-management
+       [product-id]="{number}"
+       [retrieve-lists="{boolean}"]
+       [[product-collection]="{array}"]
+       [current-list="{object}"]&gt;
+&lt;/ppd-product-list-product-management&gt;</pre>
+as attribute<pre class="prettyprint linenums">&lt;ANY ppd-product-list-product-management
+     [product-id]="{number}"
+     [retrieve-lists="{boolean}"]
+     [[product-collection]="{array}"]
+     [current-list="{object}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>[product-id]</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="productlists-directive-page productlists-directive-ppdproductlistproductmanagement-page"><p>product id to lookup the product lists for</p>
+</div></td></tr><tr><td>retrieve-lists <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="productlists-directive-page productlists-directive-ppdproductlistproductmanagement-page"><p>whether or not the product lists for this product should be resolved</p>
+</div> <p><em>(default: true)</em></p></td></tr><tr><td>[product-collection] <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-array">array</a></td><td><div class="productlists-directive-page productlists-directive-ppdproductlistproductmanagement-page"><p>collection of products currently in a list</p>
+</div></td></tr><tr><td>current-list <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="productlists-directive-page productlists-directive-ppdproductlistproductmanagement-page"><p>object representing the current list</p>
+</div> <p><em>(default: {})</em></p></td></tr></tbody></table></div>
+</div>

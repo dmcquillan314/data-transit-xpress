@@ -1,0 +1,41 @@
+<h1><code ng:non-bindable="">uiKeydown</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">keypress</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="keypress-directive-page keypress-directive-uikeydown-page"><p>The directive takes a hash (object) with the key code as the key and the callback function to fire as the value. The callback function takes an &#39;event&#39; param</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY ui-keydown
+     hash="{hash}"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>hash</td><td><a href="" class="label type-hint type-hint-hash">hash</a></td><td><div class="keypress-directive-page keypress-directive-uikeydown-page"><p>keycode to callback relation</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="keypress-directive-page keypress-directive-uikeydown-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js script.js" source-edit-html="index.html-1" source-edit-css="" source-edit-js="script.js-0" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-1" ng-html-wrap-loaded=" angular.js script.js"></pre>
+<script type="text/ng-template" id="index.html-1">
+    
+
+    <textarea
+        ui-keydown="{'enter alt-space':'keypressCallback($event)'}">
+    </textarea>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-0"></pre>
+<script type="text/ng-template" id="script.js-0">
+         $scope.keypressCallback = function($event) {
+             alert('Voila!');
+             $event.preventDefault();
+         }
+    </script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-1" ng-eval-javascript="script.js-0"></div>
+</div></div>
+</div>

@@ -1,0 +1,57 @@
+<h1><code ng:non-bindable="">accordion</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">accordion</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="accordion-directive-page accordion-directive-accordion-page"><p>This directive simply sets up the directive controller
+and adds an accordion CSS class to the element itself.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;accordion
+       [close-others="{boolean}"]&gt;
+&lt;/accordion&gt;</pre>
+as attribute<pre class="prettyprint linenums">&lt;ANY accordion
+     [close-others="{boolean}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive executes at priority level default.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>closeOthers <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="accordion-directive-page accordion-directive-accordion-page"><p>This tells the controller whether it should close all active groups before
+opening the next.</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="accordion-directive-page accordion-directive-accordion-page"><p><doc:source></p>
+<p><accordion>
+    <accordion-group>
+        <accordion-heading>
+        Title content
+        </accordion-heading></p>
+<pre><code>    Content of accordion
+
+&lt;/accordion-group&gt;
+&lt;accordion-group&gt;
+    &lt;accordion-heading&gt;
+    Title content 2
+    &lt;/accordion-heading&gt;
+
+    Content of accordion 2
+
+&lt;/accordion-group&gt;</code></pre>
+<p></accordion></p>
+<p><accordion>
+    <accordion-group heading="title content"></p>
+<pre><code>    Content of accordion
+
+&lt;/accordion-group&gt;
+&lt;accordion-group heading=&quot;title content 2&quot;&gt;
+
+    Content of accordion 2
+
+&lt;/accordion-group&gt;</code></pre>
+<p></accordion>
+</doc:source></p>
+</div></div>
+</div>

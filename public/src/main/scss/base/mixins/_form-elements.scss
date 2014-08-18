@@ -1,0 +1,28 @@
+@mixin input-placeholder( $color ) {
+    &.placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+}
+
+@mixin input-style {
+    @include appearance( none );
+    @include border-radius( 4px );
+    @include input-placeholder( $dark-grey );
+    padding: 0px 10px;
+    height: 40px;
+    background-color: $lightest-grey;
+    border: 1px solid $medium-grey;
+    color: $darkest-grey;
+    display: block;
+    float: none;
+    font-size: 1.125em;
+}

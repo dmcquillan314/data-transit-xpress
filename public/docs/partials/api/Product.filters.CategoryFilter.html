@@ -1,0 +1,21 @@
+<h1><code ng:non-bindable="">CategoryFilter</code>
+<div><span class="hint">filter in module <code ng:non-bindable="">product</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="product-filters-page product-filters-categoryfilter-page"><p>This is a filter to take in a normalized set of products and convert
+it to a set, keyed by category id, with the properties items(the set of objects in that set)
+and catName(the descriptive category name for that set).</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage"><h3 id="usage_in-html-template-binding">In HTML Template Binding</h3>
+<div class="in-html-template-binding"><code ng:non-bindable=""><span>{{</span> CategoryFilter_expression | CategoryFilter:shouldTransform <span>}}</span></code>
+</div>
+<h3 id="usage_in-javascript">In JavaScript</h3>
+<div class="in-javascript"><code ng:non-bindable="">$filter('CategoryFilter')(data, shouldTransform)</code>
+</div>
+<h4 id="usage_in-javascript_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-array">array</a></td><td><div class="product-filters-page product-filters-categoryfilter-page"><p>Collection of product objects. Each object must have a value for the consumCatId property</p>
+</div></td></tr><tr><td>shouldTransform</td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="product-filters-page product-filters-categoryfilter-page"><p>Boolean parameter that will be evaluated to see if the data should be transformed</p>
+</div> <p><em>(default: true)</em></p></td></tr></tbody></table></div>
+</div>

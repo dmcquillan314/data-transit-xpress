@@ -1,0 +1,52 @@
+<h1><code ng:non-bindable="">ngClick</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">loading</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="loading-directive-page loading-directive-ngclick-page"><p>This directive is used to display loading animations in a button or elsewhere.
+It will also add in necessary dom when specified within the given element.</p>
+<p>In the case where this is not a route change request you must broadcast/emit the event depending on the locations
+of the loading element and controller using the ppdLoadingActionFinish event.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY ng-click="{function}"
+     [loading="{boolean}"]
+     [animation-target="{string}"]
+     [animation-class="{string}"]
+     [loading-style="{string}"]
+     [disable-clicks="{boolean}"]
+     [create-child-element="{boolean}"]
+     [done-callback="{function}"]
+     [prevent-bubbling="{boolean}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>ngClick</td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>option must contain a scope method callback for when
+this is clicked. It should usually be a route change request.</p>
+</div></td></tr><tr><td>loading <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>option to enable/disable loading animations on this element</p>
+</div> <p><em>(default: false)</em></p></td></tr><tr><td>animation-target <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>option must be given a valid selector (preferably an id) to send the animation
+classes to</p>
+</div> <p><em>(default: self)</em></p></td></tr><tr><td>animation-class <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>class to apply when loading</p>
+</div> <p><em>(default: loading)</em></p></td></tr><tr><td>loading-style <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>class to apply on top of the animation class</p>
+</div> <p><em>(default: null)</em></p></td></tr><tr><td>disable-clicks <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>flag to disable click of all other ppdLoadingClick directives</p>
+</div> <p><em>(default: false)</em></p></td></tr><tr><td>create-child-element <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>flag to add a child element to itself of <pre class="prettyprint linenums">&lt;span class='loading-spinner'&gt;&lt;/span&gt;</pre>
+</div> <p><em>(default: false)</em></p></td></tr><tr><td>done-callback <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>callback to be triggered when expression in ppd-loading-click has completed</p>
+</div> <p><em>(default: function(){})</em></p></td></tr><tr><td>prevent-bubbling <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="loading-directive-page loading-directive-ngclick-page"><p>flag to enable/disable stopPropagation on click event</p>
+</div> <p><em>(default: false)</em></p></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="loading-directive-page loading-directive-ngclick-page"><h4 id="example_source">Source</h4>
+<div source-edit="" source-edit-deps="angular.js" source-edit-html="index.html-6" source-edit-css="" source-edit-js="" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html-6" ng-html-wrap-loaded=" angular.js"></pre>
+<script type="text/ng-template" id="index.html-6">
+    Simple loading animation
+    <a ppd-loading-click="loadAsyncData()">demo</a>
+
+    Create loading animation element and add child element
+    <a ppd-loading-click="loadAsyncData()" create-child-element></a>
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="" ng-set-html="index.html-6" ng-eval-javascript=""></div>
+</div></div>
+</div>

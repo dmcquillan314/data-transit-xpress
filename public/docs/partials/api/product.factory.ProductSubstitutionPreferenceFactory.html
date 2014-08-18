@@ -1,0 +1,48 @@
+<h1><code ng:non-bindable="">ProductSubstitutionPreferenceFactory</code>
+<div><span class="hint">service in module <code ng:non-bindable="">product</code>
+</span>
+</div>
+</h1>
+<div><h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$http">$http</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$resource">$resource</a></code>
+</li>
+</ul>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_$resource">$resource</h3>
+<div class="$resource"><div class="product-factory-page product-factory-productsubstitutionpreferencefactory-page"><p>This factory returns the following resource:
+<pre class="prettyprint linenums">
+$resource('/api/v2.0/user/substitute-preference/products/:productId', {},
+   {
+       'get': {
+           method: 'GET',
+           isArray: false,
+           params: {
+               productId: '@productId'
+           }
+       },
+       'update': {
+           method: 'POST',
+           isArray: false,
+           params: {
+               productId: '@productId',
+               sub: '@substitutionPreference'
+           }
+       },
+       'delete': {
+           method: 'DELETE',
+           isArray: false,
+           params: {
+               productId: '@productId'
+           }
+       }
+   });
+</pre>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

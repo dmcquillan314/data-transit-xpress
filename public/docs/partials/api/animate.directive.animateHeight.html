@@ -1,0 +1,26 @@
+<h1><code ng:non-bindable="">animateHeight</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">animate</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="animate-directive-page animate-directive-animateheight-page"><p>This directive will animate the height of the directive given the height of
+its contents.  If no additional height is specified then it will calculate the height of
+the element and add that value to the height of the element via the style attribute of the
+element.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY animate-height
+     [additional-height="{number}"]
+     condition="{boolean}"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive executes at priority level 600.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>additionalHeight <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="animate-directive-page animate-directive-animateheight-page"><p>Additional height to add to the element default is 0</p>
+</div></td></tr><tr><td>condition</td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="animate-directive-page animate-directive-animateheight-page"><p>will remove this element from dom if false, add and animate
+height if true.  Will emit the events: <code>loading.directive#refreshScroller</code> and <code>reloadHeights</code></p>
+</div></td></tr></tbody></table></div>
+</div>

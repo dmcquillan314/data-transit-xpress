@@ -1,0 +1,300 @@
+// Documentation styles 
+// ported from LESS to SCSS, with some omissions (to use actual Peapod styles)
+
+@import "compass";
+@import "compass/css3";
+// reset included in peapod styles
+
+
+// Styleguide color variables
+@import "../../../../scss/base/settings/colors";
+
+$key-color: $base-green;
+$border-color: $paleGray;
+$wrapper-width: 96rem;
+$sidebar-width: 22rem;
+$text-color: $darkGray;
+
+#kss-node {
+    background: $white;
+    border-top: 0.4rem solid $key-color;
+    line-height: 1.4;
+
+    p, ul, ol, blockquote, pre {
+        font-size: 1.6rem;
+        margin: 1.6rem 0;
+
+        strong, b {
+            font-weight: 700;
+        }
+    }
+
+    h1 {
+        margin: 1rem 0 2rem;
+    }
+
+    h2 {
+        margin: 3rem 0 1.6rem;
+    }
+
+    h3 {
+        margin: 2rem 0 1.6rem;
+    }
+
+    h4, h5, h6 {
+        margin: 1.6rem 0;
+    }
+
+    ul {
+        list-style-type: square;
+        list-style-position: outside;
+    }
+
+    ol {
+        list-style-type: decimal;
+        list-style-position: outside;
+        padding-left: 2.4rem;
+    }
+}
+
+a {
+    color: #08a;
+}
+
+.code-styles {
+    line-height: 1.5;
+    font-size: 1.4rem;
+    font-family: Consolas, Menlo,'Liberation Mono', Courier, monospace;
+  }
+
+  code {
+    @extend .code-styles;
+    display: block;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 1px solid $paleGray;
+  }
+
+.clearfix {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+.ellipsis {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// Layout
+.kss-wrapper {
+    @extend .clearfix;
+    width: $wrapper-width - 2rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+// Sidebar column
+.kss-sidebar {
+    float: left;
+    width: $sidebar-width;
+    overflow: hidden;
+    &.kss-fixed {
+        position: fixed;
+        top: 0;
+        .kss-sidebar-inner {
+            padding-top: 4.4rem;  // Keep border height
+        }
+    }
+}
+.kss-sidebar-inner {
+    padding: 4rem 0 1rem;
+}
+
+// Document title
+.kss-doc-title {
+    margin: 0 0 3rem;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: normal;
+    color: $key-color;
+}
+
+// Menu
+.kss-nav {
+    margin: 3rem 0;
+
+    #kss-node & {
+        ul {        
+            list-style-type: none;
+        }
+    }
+}
+
+.kss-menu {
+    margin: 0;
+    padding: 0;
+    
+    >.kss-menu-item {
+        font-size: 14px;
+        
+        >a {
+            @extend .clearfix;
+            display: block;
+            padding: 0.7rem 0 0.7rem 0.5rem;
+            border-bottom: 1px solid $border-color;
+            text-decoration: none;
+            font-weight: bold;
+            color: #888;
+            
+            &:hover {
+                color: $key-color;
+            }
+
+            >.kss-ref {
+                float: left;
+                margin-right: 1rem;
+                color: $key-color;
+            }
+
+            >.kss-name {
+                @extend .ellipsis;
+                text-align: right;
+            }
+        }
+
+        &.kss-active > a {
+            border-bottom-color: $key-color;
+            color: $text-color;
+            font-weight: 700;
+        }
+    }
+}
+
+.kss-menu-child {
+    display: none;
+    margin: 0;
+    padding: 5px 0;
+    list-style-type: none;
+    border-bottom: 1px solid $border-color;
+    
+    >.kss-menu-item {
+        font-size: 12px;
+
+        >a {
+            display: block;
+            padding: 0.5rem 0 0.6rem 0.5rem;
+            text-decoration: none;
+            color: #888;
+        
+            &:hover {
+              color: $key-color;
+            }
+
+            >.kss-ref {
+              float: left;
+              margin-right: 1rem;
+              color: $key-color;
+            }
+
+            >.kss-name {
+              @extend .ellipsis;
+              text-align: right;
+            }
+        }
+
+        &.kss-active > a {
+            color: $text-color;
+            font-weight: 700;
+        }
+    }
+}
+
+// Content column
+
+.styleguide-title-logo {
+    position: relative;
+    bottom: -13px;
+}
+
+.kss-content {
+    overflow: hidden;
+    margin-left: $sidebar-width + 3rem;
+    padding: 4rem 0 1rem;
+
+    ul {
+        padding-left: 2.4rem;
+    }
+
+    // iterated variants
+
+    .kss-modifier {
+        margin-bottom: 5rem;
+    }
+
+    .kss-modifier-head {
+        position: relative;
+    }
+
+    .kss-modifier-name {
+        position: absolute;
+        right: 0;
+        bottom: -27px;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid $border-color;
+        background: $xpaleGray;
+        font-size: 1.2rem;
+    }
+
+    .kss-modifier-description {
+        p {
+            border-bottom: 1px solid $border-color;
+        }
+    }
+
+}
+
+// Section
+.kss-section {
+    margin: -4rem 0 6rem;   // Adjust the target offset.
+    padding-top: 4rem;
+}
+
+#styleguide-header h2 {
+    margin: 2rem 0 1rem 1.5rem;
+}
+
+// color section
+.colorDemo {
+    height: 10rem;
+    width: 10rem;
+}
+
+$demoColorNames: "red","orange", "green", "blue", "darkGray", "medGray", "paleGray", "xPaleGray", "offWhite";
+$demoColorVars:  $red, $orange, $green, $blue, $darkGray, $medGray, $paleGray, $xpaleGray, $offWhite;
+
+$c:1;
+@each $demoColor in $demoColorNames {
+    .colorDemo-#{$demoColor} {
+        background: nth($demoColorVars, $c);
+    }
+    $c: $c + 1;
+}
+
+.styleguide-mod-name{
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    color: $medGray;
+ }
+
+
+
+
+

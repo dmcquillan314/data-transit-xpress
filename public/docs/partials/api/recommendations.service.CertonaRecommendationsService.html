@@ -1,0 +1,26 @@
+<h1><code ng:non-bindable="">CertonaRecommendationsService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">recommendations</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>This factory provides a callback promise to be used for recommendations.  The options parameters can take a set of options to be passed to certona.
+There are two exposed methods from this service that both take the same set of parameters.</p>
+<ol>
+    <li><b>sendData</b> - simply sends the request data to certona and should timeout without a response.</li>
+    <li><b>retrieveRecommendations</b> - sends the request data to certona and resolves a promise with the recommendations data.</li>
+</ol></div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage"><pre class="prettyprint linenums">CertonaRecommendationsService([top1][, top2][, rrelem][, rrnum][, event][, itemid][, exitemid][, timeout][, options]);</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>top1 <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>Not sure</p>
+</div> <p><em>(default: 100000)</em></p></td></tr><tr><td>top2 <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>Not sure</p>
+</div> <p><em>(default: 100000)</em></p></td></tr><tr><td>rrelem <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>Recommendations type for certona</p>
+</div></td></tr><tr><td>rrnum <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>number of recommendations</p>
+</div> <p><em>(default: 3)</em></p></td></tr><tr><td>event <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>event for certona recommendations</p>
+</div></td></tr><tr><td>itemid <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string=</a><a href="" class="label type-hint type-hint-array">array</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>A semicolon delimited list of item SKUs to be used to do content based recommendations.  If it is an array then it will be joined with &#39;;&#39;</p>
+</div> <p><em>(default: '')</em></p></td></tr><tr><td>exitemid <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string=</a><a href="" class="label type-hint type-hint-array">array</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>A semicolon delimited list of item SKUs to be excluded from the results.  If it is an array then it will be joined with &#39;;&#39;</p>
+</div> <p><em>(default: '')</em></p></td></tr><tr><td>timeout <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>Timeout for the backing promise of the request to certona.  (This will trigger the call to cancel itself)</p>
+</div> <p><em>(default: 4000)</em></p></td></tr><tr><td>options <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>This is a map of options to be used with certona&#39;s recommendation engine.</p>
+</div> <p><em>(default: {})</em></p></td></tr></tbody></table><h4 id="usage_returns">Returns</h4><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="recommendations-service-page recommendations-service-certonarecommendationsservice-page"><p>Returns a promise to resolve the recommended product ids for a set of options.</p>
+</div></td></tr></table></div>
+</div>

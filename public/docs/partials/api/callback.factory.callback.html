@@ -1,0 +1,25 @@
+<h1><code ng:non-bindable="">callback</code>
+<div><span class="hint">service in module <code ng:non-bindable="">callback</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="callback-factory-page callback-factory-callback-page"><p>This factory will create an instance of a callback promise using the createCallback method.
+It will follow the following flow:</p>
+<p><ol>
+    <li>Create a callback instance which will create a unique property in the stored cache of callbacks</li>
+    <li>Return an object representing the created callback</li>
+</ol></p>
+<div>
+    <em>*Note: This factory currently only supports single parameter callback functions</em>
+</div></div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage"><pre class="prettyprint linenums">callback([options]);</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>options <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="callback-factory-page callback-factory-callback-page"><p>This is an object used as a set of options for the created callback.</p>
+</div> <p><em>(default: {})</em></p></td></tr></tbody></table><h4 id="usage_returns">Returns</h4><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="callback-factory-page callback-factory-callback-page"><p>An object representing the stored value in the map and the promise to gain access to the response</p>
+<ul>
+    <li>key (e.g. callback1238940050)</li>
+    <li>stringifiedCallbackFunction (e.g. callbacks.callback1238940050)</li>
+    <li>promise - This is the promise that will be resolved when the callback has received data.</li>
+</ul></div></td></tr></table></div>
+</div>

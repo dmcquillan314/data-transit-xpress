@@ -1,0 +1,49 @@
+<h1><code ng:non-bindable="">PickupLocationController</code>
+<div><span class="hint">controller in module <code ng:non-bindable="">pickup</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>This controller is used for retrieving a set pickup locations and displaying it on a map.</p>
+</div></div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_pickuplocations">pickupLocations</h3>
+<div class="pickuplocations"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>This is a collection of pickup locations</p>
+</div></div>
+</li>
+<li><h3 id="properties_radii">radii</h3>
+<div class="radii"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>An array of radii to be used as a default.</p>
+</div></div>
+</li>
+<li><h3 id="properties_puperrorstate">pupErrorState</h3>
+<div class="puperrorstate"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>This is a flag that is set to true when a promise fails</p>
+</div></div>
+</li>
+<li><h3 id="properties_errorcode">errorCode</h3>
+<div class="errorcode"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>This is the associated code with the pupErrorState</p>
+</div></div>
+</li>
+<li><h3 id="properties_staticmapurlforlocation">staticMapUrlForLocation(location,width)</h3>
+<div class="staticmapurlforlocation"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>Retrieves a url for a map with a specified width and location</p>
+</div></div>
+</li>
+<li><h3 id="properties_directionsurlforlocation">directionsUrlForLocation(location)</h3>
+<div class="directionsurlforlocation"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>Retrieves a url to direct a user to a google maps url to view it there.</p>
+</div></div>
+</li>
+<li><h3 id="properties_lookuplocations">lookupLocations(zip,radius)</h3>
+<div class="lookuplocations"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>Refreshes the pickupLocations for a given zip and radius.</p>
+</div></div>
+</li>
+<li><h3 id="properties_lookuplocationsnearme">lookupLocationsNearMe(radius)</h3>
+<div class="lookuplocationsnearme"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>Using the zip from geolocation will delegate to lookupLocations(zip,radius)</p>
+</div></div>
+</li>
+<li><h3 id="properties_iconimageforindexandstate">iconImageForIndexAndState(index,state)</h3>
+<div class="iconimageforindexandstate"><div class="pickup-controller-page pickup-controller-pickuplocationcontroller-page"><p>Using the index of the pickupLocation and the current state of it which has the following possible values: [&#39;&#39;,&#39;selected&#39;,&#39;hover&#39;].
+This is used to retrieve a different image depending on the state.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

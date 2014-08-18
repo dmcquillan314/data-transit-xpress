@@ -1,0 +1,35 @@
+<h1><code ng:non-bindable="">UserPreferenceFactory</code>
+<div><span class="hint">service in module <code ng:non-bindable="">userPreference</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="userpreference-service-page userpreference-service-userpreferencefactory-page"><p>This returns the following resource:
+<pre class="prettyprint linenums">
+$resource('/api/v2.0/user/preferences/:preferenceName', {}, {
+    'get': {
+        method: 'GET',
+        isArray: false,
+        params: {
+            preferenceName: '@preferenceName'
+        }
+    },
+    'update': {
+        method: 'POST',
+        isArray: false,
+        params: {
+            value: '@value',
+            preferenceName: '@preferenceName'
+        }
+    },
+    'delete': {
+        method: 'DELETE',
+        isArray: false,
+        params: {
+            preferenceName: '@preferenceName'
+        }
+    }
+});
+</pre>
+</div></div>
+</div>

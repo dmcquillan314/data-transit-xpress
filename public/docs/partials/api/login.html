@@ -1,0 +1,18 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="login-page"><p>This module contains all relevant code to guest and user login</p>
+</div><h2 id="example">Example</h2>
+<div class="example"><div class="login-page"><ul>
+<li>User submits form with zip code -&gt; LoginController.user.zip = 60089</li>
+<li>Trigger event listen for key id 13 -&gt; submitUser($event, userForm)</li>
+<li>Calls sendUser from submitUser</li>
+<li>Calls sendGuestUser</li>
+<li>Response is returned from rest api which calls handleGuestError</li>
+<li>Cities property is injected into the scope</li>
+<li>User selects a city and then will repeat steps 2 - 4</li>
+<li>Response is returned from rest api which calls handleGuestSuccess</li>
+<li>User is logged in</li>
+</ul></div></div>
+</div>

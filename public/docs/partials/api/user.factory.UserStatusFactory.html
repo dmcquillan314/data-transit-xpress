@@ -1,0 +1,32 @@
+<h1><code ng:non-bindable="">UserStatusFactory</code>
+<div><span class="hint">service in module <code ng:non-bindable="">user</code>
+</span>
+</div>
+</h1>
+<div><h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$http">$http</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$resource">$resource</a></code>
+</li>
+</ul>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_$resource">$resource</h3>
+<div class="$resource"><div class="user-factory-page user-factory-userstatusfactory-page"><p>This factory returns the following resource:
+<pre class="prettyprint linenums">
+    $resource('/api/v2.0/user/status',
+        {},
+        {
+            'get': {
+                method: 'GET',
+                isArray: false,
+                params: {}
+            }
+        })
+</pre>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

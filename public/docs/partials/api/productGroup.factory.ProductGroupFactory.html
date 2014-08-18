@@ -1,0 +1,36 @@
+<h1><code ng:non-bindable="">ProductGroupFactory</code>
+<div><span class="hint">service in module <code ng:non-bindable="">productGroup</code>
+</span>
+</div>
+</h1>
+<div><h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$http">$http</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$resource">$resource</a></code>
+</li>
+</ul>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_$resource">$resource</h3>
+<div class="$resource"><div class="productgroup-factory-page productgroup-factory-productgroupfactory-page"><p>This factory returns the following resource:
+<pre class="prettyprint linenums">
+$resource('/api/v2.0/user/products/', {},
+{
+    'get': {
+        method: 'GET',
+        isArray: false,
+        params: {
+            filter: '@filter',
+            rows: '@rows',
+            start: '@start'
+        },
+        cache: true
+    }
+});
+</pre>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

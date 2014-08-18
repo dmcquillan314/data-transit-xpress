@@ -16,3 +16,6 @@ dist
 /RUNNING_PID
 /.settings
 .target
+public/.sass-cache
+public/.grunt
+public/node_modules

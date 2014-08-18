@@ -1,0 +1,23 @@
+<h1><code ng:non-bindable="">scrollableContent</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">scrollable</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="scrollable-directive-page scrollable-directive-scrollablecontent-page"><p>This directive adds a scroller trait to this dom element.  It will also
+support legacy devices by adding the overthrow polyfill to this element.</p>
+<p>This directive is overloaded and will broadcast the current scroll position.</p>
+<p>This directive accepts the following events:
+<br><b>scrollToElement</b> - This will scroll to an element specified in the data parameters (e.g. { element: <element> }.</p>
+<p>This directive broadcasts the following events:
+<br><b>scrollPositionUpdated</b> - This broadcasts the current scroll position (e.g. {
+                            currentPosition: currentScrollPosition,
+                            maxScrollPosition: maxScrollPosition
+                        } )</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY scrollable-content&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+</div>

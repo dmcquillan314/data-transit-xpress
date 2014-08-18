@@ -1,0 +1,32 @@
+$in-transition-apply-to: all;
+$in-transition-time: 300ms;
+$in-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.0);
+
+$out-transition-apply-to: all;
+$out-transition-time: 300ms;
+$out-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.0);
+
+$header-border-bottom: 0.2rem;
+$header-padding: 1rem;
+$global-padding: 1rem;
+
+$tablet-header-height: 6rem + $header-border-bottom; 
+$mobile-header-height: 4.4rem + $header-border-bottom; 
+$desktop-header-height: $tablet-header-height;
+$header-height: $tablet-header-height;
+
+$standard-border-radius: 0.2rem;
+$large-border-radius: 0.6rem;
+
+$mobile-header-padding-y: 0.7rem;
+$mobile-header-padding-x: $header-padding;
+$tablet-header-padding-y: $header-padding;
+$tablet-header-padding-x: $header-padding;
+
+
+$mobile-button-height-header: $mobile-header-height - 2 * $mobile-header-padding-y - $header-border-bottom;
+$tablet-button-height-header: $tablet-header-height - 2 * $tablet-header-padding-y - $header-border-bottom;
+$desktop-button-height-header: $desktop-header-height - 2 * $header-padding - $header-border-bottom;
+
+$button-height: 4.4rem;
+$input-field-height: $button-height;

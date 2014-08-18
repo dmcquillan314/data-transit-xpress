@@ -1,0 +1,13 @@
+@mixin button( $button-color, $button-text-color ) {
+    background-color: $button-color;
+    color: $button-text-color;
+    text-align: center;
+
+    &:hover {
+        background-color: darken( $button-color, 5 );
+    }
+
+    &:active {
+        background-color: darken( $button-color, 10 );
+    }
+}

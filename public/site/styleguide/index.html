@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <title>Peapod.com Living Styleguide</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/peapodLivingStyleGuide.css">
+    <link rel="stylesheet" href="public/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar kss-fixed">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <img src="http://i4.peapod.com/c/BU/BUOKC.png" alt="Peapod logo" height="53" width="155" class="styleguide-title-logo" />
+            <h2 class="kss-doc-title">Living Styleguide</h2>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="0">
+              <li class="kss-menu-item"><a href="./index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Peapod Color Palette</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Typography</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-3.html"><span class="kss-ref">3</span><span class="kss-name">Logos</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Buttons</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Forms</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Promotions Modules</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Product views</span></a></li>
+              
+            </ul>
+            
+            
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        
+        <article class="kss-article">
+          <section id="section-0" class="kss-section kss-overview">
+            <h1 class="styleguide-title styleguide-title-main">Style Guide Overview</h1>
+
+<p>This &quot;living&quot; style guide is automatically generated from comments in working SCSS files/modules. It is intended to be an evolving document, not a static record.
+
+</p>
+<h2 class="kss-title">Implemention Notes</h2>
+
+<p>This particular implementation utilizes the node.js version of KSS (KSS-node: <a href="https://github.com/hughsk/kss-node">https://github.com/hughsk/kss-node</a>), which compiles single line (double slash) comments in SCSS/CSS files into styleguide markup. Basic markdown formatting is supported. Multi-line (/* comments */) are ignored. The styleguide should be re-compiled to update. A grunt task has been configured for this.
+
+</p>
+<p>Overall structure is set up in the standalone peapodLivingStyleGuide.scss file, which imports appropriate SCSS modules.
+
+</p>
+<p>Comments in SCSS modules should adhere to the following general structure (each element followed by an extra commented out line)
+
+</p>
+<ul>
+<li>section title</li>
+<li>any comments</li>
+<li>markup, to display variants</li>
+<li>Section number (e.g. Styleguyide 3.1)</li>
+</ul>
+<p>This overview is written in the styleguide.md markdown file in the source directory (/shop/site/src) 
+
+</p>
+<h2 class="kss-title">Compilation</h2>
+
+<p>Grunt tasks have been created to compile and output the html documents/pages and relevant CSS. 
+
+</p>
+<p>To compile only the HTML files:
+    <pre><code>grunt shell:kssnodeCompile</code></pre>
+
+</p>
+<p>To compile only the styleguide-related CSS files:
+    <pre><code>grunt compass:styleguide</code></pre>
+
+</p>
+<p>To compile all styleguide files:
+    <pre><code>grunt compilestyleguide</code></pre></p>
+
+          </section>
+        </article>
+          
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+    <script>
+        var tempRgbArray = [];
+        
+        // calculate color luminance. Note that this uses ecmascript6 "map" method, so requies new-ish browsers
+        function luminance(r, g, b) {
+            var a = [r,g,b].map(function(v) {
+                v /= 255;
+                return (v <= 0.03928) ?
+                    v / 12.92 :
+                    Math.pow( ((v+0.055)/1.055), 2.4 );
+                });
+            return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+        }
+
+        // compare luminances
+        function compareLuminance(luminance1, luminance2) {
+            var colorRatio;
+            // console.log("lum 1:" + luminance1 + ", lum2:" + luminance2);
+            if (luminance1 >= luminance2) {
+                colorRatio = luminance1 / luminance2;
+                //console.log("lum1 greater");
+            }
+    
+            else {
+                colorRatio = luminance2 / luminance1;
+                //console.log("lum2 greater");
+            }
+
+            return colorRatio;
+        }
+
+        // set colors as rgb arrays
+        function getRgbArray(rgbStr) {
+            var rgbString = rgbStr.slice(4,-1);
+            var rgbArray = rgbString.split(", ");
+            return rgbArray;
+        }
+
+        // set luminance of default text color (uses $darkest-grey)
+        function setTextColorLuminance() {
+            var darkestGreyColor = $(".colors-darkest-grey").css("background-color");
+            var darkestGreyArray = getRgbArray(darkestGreyColor);
+            var darkestGreyLum = luminance(darkestGreyArray[0], darkestGreyArray[1], darkestGreyArray[2]);
+            return darkestGreyLum;
+        }
+
+        // set default comparison luminances
+        var whiteLuminance = luminance(255,255,255);
+        var textColorLuminance = setTextColorLuminance();
+
+        $(document).ready(function(){
+            $("div.colors").each(function(){
+                var tempColor = $(this).css("background-color"); // retrieves RGB value by default
+                // console.log("tempColor=" + tempColor);
+                tempRgbArray = getRgbArray(tempColor);
+                // console.log("tempRgbArray=" + tempRgbArray);
+                tempLuminance = (luminance(tempRgbArray[0], tempRgbArray[1], tempRgbArray[2])) + 0.05;
+                // console.log("tempLuminance=" + tempLuminance);
+                var colorRatio_white = compareLuminance(tempLuminance, whiteLuminance);
+                var colorRatio_text = compareLuminance(tempLuminance, textColorLuminance);
+                var colorRatio_white_rnd = Math.round(colorRatio_white * 10) / 10;
+                var colorRatio_text_rnd = Math.round(colorRatio_text * 10) / 10;
+                // console.log("white contrast:" + colorRatio_white_rnd);
+                console.log("text contrast:" + colorRatio_text_rnd );
+
+                var wcagStatusDiv_white = '<span class="kss-color-status kss-color-status--white"></span>';
+                var wcagStatusDiv_text = '<span class="kss-color-status kss-color-status--text"></span>';
+
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-white").text(colorRatio_white_rnd);
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-white").prepend(wcagStatusDiv_white);
+                if ( colorRatio_white_rnd >=4.5 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--white").addClass("wcag-aa-pass").addClass("icon_like");
+                }
+
+                else if (colorRatio_white_rnd >= 3 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--white").addClass("wcag-a-pass").addClass("icon_like");
+                }
+
+                else {
+                    $(this).next(".kss-wcag").find(".kss-color-status--white").addClass("icon_dislike");
+                }
+
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-text").text(colorRatio_text_rnd);
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-text").prepend(wcagStatusDiv_text);
+                if ( colorRatio_text_rnd >=4.5 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--text").addClass("wcag-aa-pass").addClass("icon_like");
+                }
+
+                else if (colorRatio_text_rnd >= 3 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--text").addClass("wcag-a-pass").addClass("icon_like");
+                }
+
+                else {
+                    $(this).next(".kss-wcag").find(".kss-color-status--text").addClass("icon_dislike");
+                }
+            });
+        });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<h1><code ng:non-bindable="">SlotController</code>
+<div><span class="hint">controller in module <code ng:non-bindable="">slot</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>This controller manages a user&#39;s interaction with the delivery/pickup slot flows.  It also
+handles delegation of a user to pickup locations when necessary</p>
+</div></div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_selectpickuplocation">selectPickupLocation(location)</h3>
+<div class="selectpickuplocation"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Delegates the user to the pickup location flow</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectservicetype">selectServiceType(type)</h3>
+<div class="selectservicetype"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Selects a service type of either &#39;P&#39; or &#39;D&#39; and gets a default set of slots</p>
+</div></div>
+</li>
+<li><h3 id="properties_toggleservicetype">toggleServiceType(type)</h3>
+<div class="toggleservicetype"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Takes the user&#39;s currently selected service type then chooses the other and delegates to selectServiceType</p>
+</div></div>
+</li>
+<li><h3 id="properties_reserveslot">reserveSlot(slot)</h3>
+<div class="reserveslot"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Reserves a given slot</p>
+</div></div>
+</li>
+<li><h3 id="properties_selectheader">selectHeader(header)</h3>
+<div class="selectheader"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Will change the active header and retrieve slots for it</p>
+</div></div>
+</li>
+<li><h3 id="properties_resetrestrictedslot">resetRestrictedSlot()</h3>
+<div class="resetrestrictedslot"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Resets the actively visible restricted items</p>
+</div></div>
+</li>
+<li><h3 id="properties_setactiverestrictedslot">setActiveRestrictedSlot(slot)</h3>
+<div class="setactiverestrictedslot"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Selects which restricted slot will be visible</p>
+</div></div>
+</li>
+<li><h3 id="properties_togglerestrictedslot">toggleRestrictedSlot(slot)</h3>
+<div class="togglerestrictedslot"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Toggles a restricted slot from open to closed and vice versa</p>
+</div></div>
+</li>
+<li><h3 id="properties_removerestricteditemsforslot">removeRestrictedItemsForSlot(slot)</h3>
+<div class="removerestricteditemsforslot"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Removes the restricted items from the cart</p>
+</div></div>
+</li>
+<li><h3 id="properties_getaggregatedrestricteditems">getAggregatedRestrictedItems(slots)</h3>
+<div class="getaggregatedrestricteditems"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Delegates to the aggregatedRestrictedItems method of <a href="#/api/slot.service:RestrictedSlotService">slot.service:RestrictedSlotService</a></p>
+</div></div>
+</li>
+<li><h3 id="properties_isheaderselected">isHeaderSelected(header,viewDate)</h3>
+<div class="isheaderselected"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Checks to see if the selected viewDate matches the viewDate on the header</p>
+</div></div>
+</li>
+<li><h3 id="properties_isheaderavailable">isHeaderAvailable(header)</h3>
+<div class="isheaderavailable"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Checks if the status code of a header matches a set of status codes that should be seen as unavailable</p>
+</div></div>
+</li>
+<li><h3 id="properties_getdayclassesforheader">getDayClassesForHeader(header,viewDate)</h3>
+<div class="getdayclassesforheader"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Retrieves the set of classes that should be added/removed to the element(used with ng-class directive)</p>
+</div></div>
+</li>
+<li><h3 id="properties_isslotrestricted">isSlotRestricted(slot)</h3>
+<div class="isslotrestricted"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Checks if a slot is restricted</p>
+</div></div>
+</li>
+<li><h3 id="properties_restrictedslotsexist">restrictedSlotsExist(slot)</h3>
+<div class="restrictedslotsexist"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Utility function to tell if a slot has restricted items</p>
+</div></div>
+</li>
+<li><h3 id="properties_getrestrictedtypes">getRestrictedTypes(slots)</h3>
+<div class="getrestrictedtypes"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Delegates to the getRestrictedTypesFromSlots method of <a href="#/api/slot.service:RestrictedSlotService">slot.service:RestrictedSlotService</a></p>
+</div></div>
+</li>
+<li><h3 id="properties_getrestrictedtypesstring">getRestrictedTypesString(slots)</h3>
+<div class="getrestrictedtypesstring"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Given a set of slots it will generate a common list of restrictions for the given header</p>
+</div></div>
+</li>
+<li><h3 id="properties_getslotclasses">getSlotClasses(slot,isLast)</h3>
+<div class="getslotclasses"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Gets the classes for a given slot and the $last parameter from ng-repeat</p>
+</div></div>
+</li>
+<li><h3 id="properties_hasmessage">hasMessage(slot)</h3>
+<div class="hasmessage"><div class="slot-controller-page slot-controller-slotcontroller-page"><p>Checks if the slot has a message to display</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

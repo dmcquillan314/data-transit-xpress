@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <title>Peapod.com Living Styleguide</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/peapodLivingStyleGuide.css">
+    <link rel="stylesheet" href="public/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar kss-fixed">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <img src="http://i4.peapod.com/c/BU/BUOKC.png" alt="Peapod logo" height="53" width="155" class="styleguide-title-logo" />
+            <h2 class="kss-doc-title">Living Styleguide</h2>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="1">
+              <li class="kss-menu-item"><a href="./index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Peapod Color Palette</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Typography</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-3.html"><span class="kss-ref">3</span><span class="kss-name">Logos</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Buttons</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Forms</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Promotions Modules</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Product views</span></a></li>
+              
+            </ul>
+            
+            <ul class="kss-menu-child">
+              
+              
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-1.1"><span class="kss-ref">1.1</span><span class="kss-name">Colors</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-1.2"><span class="kss-ref">1.2</span><span class="kss-name">High Contrast Colors</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-1.3"><span class="kss-ref">1.3</span><span class="kss-name">Greys</span></a></li>
+              
+              
+            </ul>
+            
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        
+          
+        <article class="kss-article-1">
+          <section id="section-1" class="kss-section kss-depth-1">
+              
+                <h1 class="kss-title"><span class="kss-ref">1</span> Peapod Color Palette</h1>
+              
+            
+            
+            <div class="kss-description">
+              <p>These colors have been chosen to provide contrast ratios that meet <strong>WCAG AA-level accessibility requirements</strong> of 4.5:1 for standard text and/or 3:1 for large or bold text.
+Contrast ratios shown are calculated using the WCAG 2.0 recommendation of luminance ratio: (L1 + 0.05) / (L2 + 0.05), where L1 is the relative luminance of the lighter of the colors, and
+L2 is the relative luminance of the darker of the colors.
+
+</p>
+<p>Please avoid using shades or tints of these base colors where possible, or ensure that variations meet the same accessibility requirements.
+
+</p>
+<p>See www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html for more information</p>
+
+            </div>
+            
+            
+          </section>
+          
+        <article class="kss-article-1.1">
+          <section id="section-1.1" class="kss-section kss-depth-2">
+              
+                <h2 class="kss-title"><span class="kss-ref">1.1</span> Colors</h2>
+              
+            
+            
+            <div class="kss-description">
+              <p><h3>Key to WCAG AA icons: </h3>
+</p>
+<p><span class="kss-color-status wcag-aa-pass icon_like"></span> color contrast passes at standard text sizes</p>
+<p><span class="kss-color-status wcag-a-pass icon_like"></span> color contrast passes only with bold or large text</p>
+<p><span class="kss-color-status wcag-aa-pass icon_dislike"></span> color contrast does not pass</p>
+            </div>
+            
+            <div class="kss-modifier-block">
+              <!-- <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;colors {$modifiers}&quot;&gt;&lt;/div&gt;&lt;div class=&quot;kss-wcag&quot;&gt;&lt;span class=&quot;kss-contrast-ratio&quot;&gt;contrast w/white: &lt;span class=&quot;kss-wcag-contrast-white&quot;&gt;&lt;/span&gt;:1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;kss-contrast-ratio&quot;&gt;contrast w/dark grey (default text color): &lt;span class=&quot;kss-wcag-contrast-text&quot;&gt;&lt;/span&gt;:1&lt;/span&gt;&lt;/div&gt;</code></pre>
+              </div>
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="colors {$modifiers}"></div><div class="kss-wcag"><span class="kss-contrast-ratio">contrast w/white: <span class="kss-wcag-contrast-white"></span>:1</span><br><span class="kss-contrast-ratio">contrast w/dark grey (default text color): <span class="kss-wcag-contrast-text"></span>:1</span></div>
+                </div>
+              </div>-->
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-base-green"></div><div class="kss-wcag"><span class="kss-contrast-ratio">contrast w/white: <span class="kss-wcag-contrast-white"></span>:1</span><br><span class="kss-contrast-ratio">contrast w/dark grey (default text color): <span class="kss-wcag-contrast-text"></span>:1</span></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-base-green</div>
+                  <div class="kss-modifier-description">
+                    <p><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-base-orange"></div><div class="kss-wcag"><span class="kss-contrast-ratio">contrast w/white: <span class="kss-wcag-contrast-white"></span>:1</span><br><span class="kss-contrast-ratio">contrast w/dark grey (default text color): <span class="kss-wcag-contrast-text"></span>:1</span></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-base-orange</div>
+                  <div class="kss-modifier-description">
+                    <p><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-base-blue"></div><div class="kss-wcag"><span class="kss-contrast-ratio">contrast w/white: <span class="kss-wcag-contrast-white"></span>:1</span><br><span class="kss-contrast-ratio">contrast w/dark grey (default text color): <span class="kss-wcag-contrast-text"></span>:1</span></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-base-blue</div>
+                  <div class="kss-modifier-description">
+                    <p><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-base-purple"></div><div class="kss-wcag"><span class="kss-contrast-ratio">contrast w/white: <span class="kss-wcag-contrast-white"></span>:1</span><br><span class="kss-contrast-ratio">contrast w/dark grey (default text color): <span class="kss-wcag-contrast-text"></span>:1</span></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-base-purple</div>
+                  <div class="kss-modifier-description">
+                    <p><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-base-red"></div><div class="kss-wcag"><span class="kss-contrast-ratio">contrast w/white: <span class="kss-wcag-contrast-white"></span>:1</span><br><span class="kss-contrast-ratio">contrast w/dark grey (default text color): <span class="kss-wcag-contrast-text"></span>:1</span></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-base-red</div>
+                  <div class="kss-modifier-description">
+                    <p><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-base-yellow"></div><div class="kss-wcag"><span class="kss-contrast-ratio">contrast w/white: <span class="kss-wcag-contrast-white"></span>:1</span><br><span class="kss-contrast-ratio">contrast w/dark grey (default text color): <span class="kss-wcag-contrast-text"></span>:1</span></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-base-yellow</div>
+                  <div class="kss-modifier-description">
+                    <p><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </section>
+          
+        <article class="kss-article-1.2">
+          <section id="section-1.2" class="kss-section kss-depth-2">
+              
+                <h2 class="kss-title"><span class="kss-ref">1.2</span> High Contrast Colors</h2>
+              
+            
+            
+            <div class="kss-description">
+              <p>An additional set of high contrast color for accessibility (user-selectable option). To be determined.</p>
+
+            </div>
+            
+            
+          </section>
+          
+        <article class="kss-article-1.3">
+          <section id="section-1.3" class="kss-section kss-depth-2">
+              
+                <h2 class="kss-title"><span class="kss-ref">1.3</span> Greys</h2>
+              
+            
+            
+            <div class="kss-modifier-block">
+              <!-- <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;colors {$modifiers}&quot;&gt;&lt;/div&gt;</code></pre>
+              </div>
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="colors {$modifiers}"></div>
+                </div>
+              </div>-->
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-lightest-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-lightest-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>lightest grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-lighter-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-lighter-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>lighter grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-light-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-light-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>light grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-medium-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-medium-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-medium-dark-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-medium-dark-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>medium grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-dark-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-dark-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>charcoal grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-darker-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-darker-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>darker grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-example">
+                  <div class="colors colors-darkest-grey"></div>
+                </div>
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.colors-darkest-grey</div>
+                  <div class="kss-modifier-description">
+                    <p><strong>darkest grey</strong><span class="kss-example-colorKey"></span></p>
+
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </section>
+          
+          </article>
+          
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+    <script>
+        var tempRgbArray = [];
+        
+        // calculate color luminance. Note that this uses ecmascript6 "map" method, so requies new-ish browsers
+        function luminance(r, g, b) {
+            var a = [r,g,b].map(function(v) {
+                v /= 255;
+                return (v <= 0.03928) ?
+                    v / 12.92 :
+                    Math.pow( ((v+0.055)/1.055), 2.4 );
+                });
+            return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+        }
+
+        // compare luminances
+        function compareLuminance(luminance1, luminance2) {
+            var colorRatio;
+            // console.log("lum 1:" + luminance1 + ", lum2:" + luminance2);
+            if (luminance1 >= luminance2) {
+                colorRatio = luminance1 / luminance2;
+                //console.log("lum1 greater");
+            }
+    
+            else {
+                colorRatio = luminance2 / luminance1;
+                //console.log("lum2 greater");
+            }
+
+            return colorRatio;
+        }
+
+        // set colors as rgb arrays
+        function getRgbArray(rgbStr) {
+            var rgbString = rgbStr.slice(4,-1);
+            var rgbArray = rgbString.split(", ");
+            return rgbArray;
+        }
+
+        // set luminance of default text color (uses $darkest-grey)
+        function setTextColorLuminance() {
+            var darkestGreyColor = $(".colors-darkest-grey").css("background-color");
+            var darkestGreyArray = getRgbArray(darkestGreyColor);
+            var darkestGreyLum = luminance(darkestGreyArray[0], darkestGreyArray[1], darkestGreyArray[2]);
+            return darkestGreyLum;
+        }
+
+        // set default comparison luminances
+        var whiteLuminance = luminance(255,255,255);
+        var textColorLuminance = setTextColorLuminance();
+
+        $(document).ready(function(){
+            $("div.colors").each(function(){
+                var tempColor = $(this).css("background-color"); // retrieves RGB value by default
+                // console.log("tempColor=" + tempColor);
+                tempRgbArray = getRgbArray(tempColor);
+                // console.log("tempRgbArray=" + tempRgbArray);
+                tempLuminance = (luminance(tempRgbArray[0], tempRgbArray[1], tempRgbArray[2])) + 0.05;
+                // console.log("tempLuminance=" + tempLuminance);
+                var colorRatio_white = compareLuminance(tempLuminance, whiteLuminance);
+                var colorRatio_text = compareLuminance(tempLuminance, textColorLuminance);
+                var colorRatio_white_rnd = Math.round(colorRatio_white * 10) / 10;
+                var colorRatio_text_rnd = Math.round(colorRatio_text * 10) / 10;
+                // console.log("white contrast:" + colorRatio_white_rnd);
+                console.log("text contrast:" + colorRatio_text_rnd );
+
+                var wcagStatusDiv_white = '<span class="kss-color-status kss-color-status--white"></span>';
+                var wcagStatusDiv_text = '<span class="kss-color-status kss-color-status--text"></span>';
+
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-white").text(colorRatio_white_rnd);
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-white").prepend(wcagStatusDiv_white);
+                if ( colorRatio_white_rnd >=4.5 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--white").addClass("wcag-aa-pass").addClass("icon_like");
+                }
+
+                else if (colorRatio_white_rnd >= 3 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--white").addClass("wcag-a-pass").addClass("icon_like");
+                }
+
+                else {
+                    $(this).next(".kss-wcag").find(".kss-color-status--white").addClass("icon_dislike");
+                }
+
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-text").text(colorRatio_text_rnd);
+                $(this).next(".kss-wcag").find(".kss-wcag-contrast-text").prepend(wcagStatusDiv_text);
+                if ( colorRatio_text_rnd >=4.5 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--text").addClass("wcag-aa-pass").addClass("icon_like");
+                }
+
+                else if (colorRatio_text_rnd >= 3 ) {
+                    $(this).next(".kss-wcag").find(".kss-color-status--text").addClass("wcag-a-pass").addClass("icon_like");
+                }
+
+                else {
+                    $(this).next(".kss-wcag").find(".kss-color-status--text").addClass("icon_dislike");
+                }
+            });
+        });
+
+    </script>
+  </body>
+</html>
